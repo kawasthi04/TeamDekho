@@ -1,10 +1,10 @@
 // script.js
 
-// SheetDB API URLs (replace with your actual URLs from SheetDB)
-const candidatesApiUrl = 'https://sheetdb.io/api/v1/bexlk84j9vuz8';
-const vacanciesApiUrl = 'https://sheetdb.io/api/v1/4trmpnrw68men';
+// Sheet2API API URLs (replace with your actual URLs from Sheet2API)
+const candidatesApiUrl = 'https://sheet2api.com/v1/aJATW0fpTfaV/availablestudents';
+const vacanciesApiUrl = 'https://sheet2api.com/v1/aJATW0fpTfaV/teamvacancies';
 
-// Function to load candidates from SheetDB and display them
+// Function to load candidates from Sheet2API and display them
 function loadCandidates() {
   fetch(candidatesApiUrl)
     .then(response => response.json())
@@ -24,7 +24,7 @@ function loadCandidates() {
     });
 }
 
-// Function to load vacancies from SheetDB and display them
+// Function to load vacancies from Sheet2API and display them
 function loadVacancies() {
   fetch(vacanciesApiUrl)
     .then(response => response.json())
@@ -57,13 +57,13 @@ if (joinForm) {
       Timestamp: new Date().toISOString() // Add timestamp for sorting
     };
 
-    // Send data to SheetDB
+    // Send data to Sheet2API
     fetch(candidatesApiUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ data: candidate })
+      body: JSON.stringify(candidate) // Sheet2API expects data directly, no "data" wrapper
     })
     .then(response => response.json())
     .then(() => {
@@ -90,13 +90,13 @@ if (vacancyForm) {
       Timestamp: new Date().toISOString() // Add timestamp for sorting
     };
 
-    // Send data to SheetDB
+    // Send data to Sheet2API
     fetch(vacanciesApiUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ data: vacancy })
+      body: JSON.stringify(vacancy) // Sheet2API expects data directly, no "data" wrapper
     })
     .then(response => response.json())
     .then(() => {
@@ -111,7 +111,7 @@ if (vacancyForm) {
   });
 }
 
-// Load data when the page loads
+// Load data when the page loads 
 if (document.getElementById("candidatesList")) {
   loadCandidates();
 }
