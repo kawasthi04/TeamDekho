@@ -1,0 +1,322 @@
+/* Import a retro pixel font for that CRT feel */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Reset & Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  line-height: 1.6;
+  background-color: #000;
+  color: #33FF33; /* Neon green reminiscent of old CRT monitors */
+  font-size: 14px;
+  padding-bottom: 40px; /* extra space at bottom */
+}
+
+/* Container for consistent layout */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Header Styles */
+header {
+  background: linear-gradient(135deg, #005500, #003300);
+  padding: 20px 0;
+  border-bottom: 2px solid #33FF33;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.logo {
+  font-size: 1.8rem;
+  color: #33FF33;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  color: #33FF33;
+  text-decoration: none;
+  padding: 5px 10px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  border: 1px solid #33FF33;
+  background-color: rgba(51, 255, 51, 0.1);
+}
+
+/* Hero Section */
+.hero {
+  background: url('https://via.placeholder.com/1200x500?text=Interdisciplinary+Project') center/cover no-repeat;
+  height: 500px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  mix-blend-mode: multiply;
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: #33FF33;
+  z-index: 1;
+  padding: 0 20px;
+}
+
+.hero-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px #000;
+}
+
+.hero-content p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px #000;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: #003300;
+  color: #33FF33;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: 2px solid #33FF33;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background: #002200;
+  transform: scale(1.05);
+}
+
+/* Features Section */
+.features {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0;
+  text-align: center;
+}
+
+.feature {
+  flex: 1;
+  margin: 0 10px;
+  padding: 20px;
+}
+
+.feature h3 {
+  margin-bottom: 10px;
+  color: #33FF33;
+}
+
+/* Form & List Sections */
+.form-section, .list-section, .about-section {
+  padding: 20px 0;
+  margin-bottom: 40px;
+}
+
+.form-section h2,
+.list-section h2,
+.about-section h2 {
+  margin-bottom: 10px;
+  color: #33FF33;
+  text-align: center;
+}
+
+.form-section p, 
+.about-section p {
+  margin-bottom: 20px;
+  color: #99FF99;
+  text-align: center;
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #33FF33;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  background: #000;
+  border: 1px solid #33FF33;
+  color: #33FF33;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #99FF99;
+}
+
+/* List Container & Items */
+.list-container {
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.list-container ul {
+  list-style: none;
+}
+
+.list-container li {
+  padding: 10px;
+  border-bottom: 1px solid #33FF33;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+/* Alternating background colours for better readability */
+.list-container li:nth-child(odd) {
+  background-color: rgba(51, 255, 51, 0.05);
+}
+
+.list-container li:nth-child(even) {
+  background-color: rgba(51, 255, 51, 0.1);
+}
+
+/* Emphasized text for names and team identifiers */
+.candidate-name,
+.vacancy-team {
+  font-weight: bold;
+  color: #FF9933; /* Neon orange accent */
+}
+
+/* About Section Lists */
+.guidelines-list {
+  list-style: disc;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  color: #99FF99;
+}
+
+/* Footer */
+footer {
+  background: #000;
+  border-top: 2px solid #33FF33;
+  color: #33FF33;
+  padding: 15px 0;
+  text-align: center;
+  margin-top: 40px;
+}
+
+footer a {
+  color: #FF9933;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #FFCC66;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .features {
+    flex-direction: column;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+  
+  .nav-links li {
+    margin: 5px 0;
+  }
+}
+
+/* Modal Container (hidden by default) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8); /* Dark overlay */
+}
+
+/* Modal Content Box */
+.modal-content {
+  background-color: #000;
+  margin: 10% auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  border: 2px solid #33FF33;
+  border-radius: 4px;
+}
+
+/* Close Button */
+.modal-content .close {
+  color: #33FF33;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-content .close:hover,
+.modal-content .close:focus {
+  color: #FF9933;
+}
