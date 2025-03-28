@@ -195,12 +195,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const backendUrl = 'https://teamdekhobe.onrender.com';
   const candidatesApiUrl = `${backendUrl}/api/candidates`;
 
-  // Identify current user (for demonstration)
-  const currentUserName = localStorage.getItem('teamDekhoUser') || prompt("Enter your name (for demo):");
-  if (currentUserName) {
-    localStorage.setItem('teamDekhoUser', currentUserName);
-  }
-
   // Modal toggle functionality using class "active"
   const openJoinModal = document.getElementById("openJoinModal");
   const closeJoinModal = document.getElementById("closeJoinModal");
@@ -351,12 +345,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // Deployed backend URLs
   const backendUrl = 'https://teamdekhobe.onrender.com';
   const candidatesApiUrl = `${backendUrl}/api/candidates`;
-
-  // Identify current user (for demonstration, using prompt)
-  const currentUserName = localStorage.getItem('teamDekhoUser') || prompt("Enter your name (for demo):");
-  if (currentUserName) {
-    localStorage.setItem('teamDekhoUser', currentUserName);
-  }
 
   // Modal toggle functionality using .active class
   const openJoinModal = document.getElementById("openJoinModal");
