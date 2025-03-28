@@ -6,10 +6,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  overflow: hidden; /* Prevents scrolling */
 }
 
 body {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Press Start 2P', 'Courier New', Courier, monospace;
   line-height: 1.6;
   background-color: #000;
   color: #33FF33; /* Neon green reminiscent of old CRT monitors */
@@ -111,6 +112,7 @@ header {
 
 /* Buttons */
 .btn {
+  font: inherit;
   display: inline-block;
   background: #003300;
   color: #33FF33;
@@ -126,7 +128,6 @@ header {
 
 .btn:hover {
   background: #002200;
-  transform: scale(1.05);
 }
 
 /* Features Section */
@@ -148,8 +149,13 @@ header {
   color: #33FF33;
 }
 
+.form {
+  font: inherit;
+}
+
 /* Form & List Sections */
 .form-section, .list-section, .about-section {
+  font-family: inherit;
   padding: 20px 0;
   margin-bottom: 40px;
 }
@@ -157,6 +163,7 @@ header {
 .form-section h2,
 .list-section h2,
 .about-section h2 {
+  font-family: inherit;
   margin-bottom: 10px;
   color: #33FF33;
   text-align: center;
@@ -164,6 +171,7 @@ header {
 
 .form-section p, 
 .about-section p {
+  font-family: inherit;
   margin-bottom: 20px;
   color: #99FF99;
   text-align: center;
@@ -171,10 +179,12 @@ header {
 
 /* Form Groups */
 .form-group {
+  font-family: inherit;
   margin-bottom: 15px;
 }
 
 .form-group label {
+  font-family: inherit;
   display: block;
   margin-bottom: 5px;
   color: #33FF33;
@@ -183,11 +193,12 @@ header {
 .form-group input,
 .form-group select,
 .form-group textarea {
+  font-family: inherit;
   width: 100%;
   padding: 10px;
   background: #000;
   border: 1px solid #33FF33;
-  color: #33FF33;
+  color: #99FF99;
   border-radius: 4px;
   transition: border-color 0.3s ease;
 }
@@ -195,6 +206,7 @@ header {
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
+  font-family: inherit;
   outline: none;
   border-color: #99FF99;
 }
@@ -319,4 +331,165 @@ footer a:hover {
 .modal-content .close:hover,
 .modal-content .close:focus {
   color: #FF9933;
+}
+
+/* For WebKit browsers */
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #003300; /* dark green track for a retro feel */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #33FF33; /* neon green thumb */
+  border: 2px solid #000;
+  border-radius: 10px;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;            /* "auto" or "thin" */
+  scrollbar-color: #33FF33 #003300;  /* thumb and track colors */
+}
+
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+}
+
+/* When active, the modal will be centered */
+.modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: #000;
+  margin: 2% auto; /* Moved further up */
+  padding: 20px;
+  border: 2px solid #33FF33;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #33FF33;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.filter-options {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.filter-btn {
+  font-family: inherit;
+  background: #003300;
+  color: #33FF33;
+  padding: 5px 10px;
+  margin: 0 5px;
+  border: 2px solid #33FF33;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.filter-btn.active, .filter-btn:hover {
+  background: #002200;
+}
+
+/* Loading Indicator Styles */
+.loading {
+  color: #33FF33;
+  font-size: 14px;
+  text-align: center;
+  margin: 20px 0;
+  animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+ /* Accordion Styles */
+ .accordion {
+  width: 80%;
+  margin: 20px auto;
+  border: 2px solid #33FF33;
+  border-radius: 4px;
+  background-color: #000;
+}
+.accordion-item {
+  border-bottom: 1px solid #33FF33;
+}
+.accordion-title {
+  display: block;
+  width: 100%;
+  background: #003300;
+  color: #33FF33;
+  text-align: left;
+  padding: 15px;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-family: 'Press Start 2P', 'Courier New', Courier, monospace;
+}
+.accordion-title:hover {
+  background: #002200;
+}
+.accordion-title.active {
+  background: #002200;
+}
+.accordion-content {
+  display: none;
+  background-color: #000;
+  color: #99FF99;
+  padding: 15px;
+  text-align: left;
+  font-family: 'Press Start 2P', 'Courier New', Courier, monospace;
+}
+.accordion-content.active {
+  display: block;
+}
+.accordion-content ul {
+  list-style: disc;
+  margin-left: 20px;
+}
+.accordion-content h4 {
+  margin-top: 10px;
+  color: #33FF33;
+}
+
+/* Retro CRT loading animation for vacancies */
+.crt-loader {
+  font-family: 'Press Start 2P', cursive;
+  color: #33FF33;
+  text-align: center;
+  padding: 20px 0;
+  animation: blink 1s steps(2, start) infinite;
+}
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
 }
