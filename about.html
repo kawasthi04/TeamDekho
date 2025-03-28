@@ -5,9 +5,10 @@
   <meta charset="UTF-8">
   <title>Guidelines – TeamDekho</title>
   <link rel="stylesheet" href="styles.css">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Accordion and container styles remain unchanged */
+  </style>
 </head>
 <body>
   <header>
@@ -25,18 +26,93 @@
   </header>
 
   <main class="container about-section">
-    <h2>Project Guidelines</h2>
-    <p>In order to successfully complete your interdisciplinary project, please ensure your team adheres to the following guidelines:</p>
-    <ul class="guidelines-list">
-      <li>Teams must be comprised of 5-6 students.</li>
-      <li>Each team must include <strong>2 CS</strong> students, <strong>2 EC</strong> students, and at least <strong>1 ME</strong> student.</li>
-      <li>Teams cannot be formed within the same branch or cluster.</li>
-      <li>Ensure all contact information provided is up-to-date.</li>
-      <li>The site is intended solely for team formation. Please refrain from misusing personal information.</li>
-    </ul>
-    <p>This platform is designed to streamline team formation, making it easier for students to connect based on their clusters and branches.</p>
+    <h2>Interdisciplinary Project Guidelines (XX367P)</h2>
+    <p>
+      VI Semester BE students must complete an Interdisciplinary Project for 3 credits.
+      Click to expand each section:
+    </p>
+
+    <div class="accordion">
+      <!-- Batch Formation & Composition -->
+      <div class="accordion-item">
+        <button class="accordion-title">Batch Formation & Composition</button>
+        <div class="accordion-content">
+          <ul>
+            <li>Teams: 5–6 students (CS, EC, ME)</li>
+            <li>No same branch/cluster groups</li>
+            <li>Suggested: 2 CS, 2 EC, 1–2 ME</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Project Requirements -->
+      <div class="accordion-item">
+        <button class="accordion-title">Project Requirements</button>
+        <div class="accordion-content">
+          <ul>
+            <li>Three guides (one per cluster)</li>
+            <li>Topic per college-approved list</li>
+            <li>Outcome: Prototype, proof-of-concept, or paper</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Implementation & Evaluation -->
+      <div class="accordion-item">
+        <button class="accordion-title">Implementation & Evaluation</button>
+        <div class="accordion-content">
+          <ul>
+            <li>Meet guides twice weekly</li>
+            <li>Maintain a project log</li>
+            <li>Evaluation in three phases (20%, 40%, 40%)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Important Deadlines -->
+      <div class="accordion-item">
+        <button class="accordion-title">Important Deadlines</button>
+        <div class="accordion-content">
+          <ul>
+            <li>Topic & synopsis: 08/04/2025</li>
+            <li>Methodology & results: 26–28/05/2025</li>
+            <li>Final presentation: 07–09/07/2025</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Using TeamDekho -->
+      <div class="accordion-item">
+        <button class="accordion-title">Using TeamDekho</button>
+        <div class="accordion-content">
+          <ul>
+            <li>Register on the Join page</li>
+            <li>Post vacancies if you need team members</li>
+            <li>Keep contact info updated</li>
+            <li>Use the platform responsibly</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </main>
 
-  <script src="script.js"></script>
+  <script>
+    // Simple Accordion Script: Only one section open at a time
+    const accordionTitles = document.querySelectorAll('.accordion-title');
+    accordionTitles.forEach(title => {
+      title.addEventListener('click', () => {
+        // Close all other sections
+        accordionTitles.forEach(btn => {
+          if (btn !== title) {
+            btn.classList.remove('active');
+            btn.nextElementSibling.classList.remove('active');
+          }
+        });
+        // Toggle the clicked section
+        title.classList.toggle('active');
+        title.nextElementSibling.classList.toggle('active');
+      });
+    });
+  </script>
 </body>
 </html>
